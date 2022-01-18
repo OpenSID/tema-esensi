@@ -23,7 +23,7 @@
 <meta name='theme:designer' content='Diki Siswanto' />
 <meta name='theme:version' content='<?= THEME_VERSION ?>' />
 <meta name="theme-color" content="#efefef">
-<meta name='keywords' content="<?= $desa_title ?> <?php !strpos($desa_title, NAMA_DESA) and print(NAMA_DESA) ?>" />
+<meta name='keywords' content="<?= $desa_title ?> <?php !strpos($desa_title, NAMA_DESA) and print(NAMA_DESA) ?> <?= ucfirst($this->setting->sebutan_kecamatan) ?> <?= ucwords($desa['nama_kecamatan']) ?>, <?= ucfirst($this->setting->sebutan_kabupaten) ?> <?= ucwords($desa['nama_kabupaten']) ?>, Provinsi  <?= ucwords($desa['nama_propinsi']) ?>" />
 <meta property="og:site_name" content="<?= NAMA_DESA ?>"/>
 <meta property="og:type" content="article"/>
 <link rel="canonical" href="<?= site_url() ?>"/>
@@ -59,10 +59,10 @@
   <meta property='og:description' content="<?= str_replace('"', "'", substr(strip_tags($single_artikel['isi']), 0, 150)); ?>" />
 <?php else: ?>
   <title><?= $desa_title ?></title>
-  <meta name='description' content="<?= $desa_title ?> <?php !strpos($desa_title, NAMA_DESA) and print(NAMA_DESA) ?>" />
+  <meta name='description' content="<?= $desa_title ?> <?php !strpos($desa_title, NAMA_DESA) and print(NAMA_DESA) ?> <?= ucfirst($this->setting->sebutan_kecamatan) ?> <?= ucwords($desa['nama_kecamatan']) ?>, <?= ucfirst($this->setting->sebutan_kabupaten) ?> <?= ucwords($desa['nama_kabupaten']) ?>, Provinsi  <?= ucwords($desa['nama_propinsi']) ?>" />
   <meta itemprop="name" content="<?= $desa_title ?>"/>
   <meta property="og:title" content="<?= $desa_title ?>"/>
-  <meta property='og:description' content="<?= $desa_title ?> <?php !strpos($desa_title, NAMA_DESA) and print(NAMA_DESA) ?>" />
+  <meta property='og:description' content="<?= ucfirst($this->setting->sebutan_kecamatan) ?> <?= ucwords($desa['nama_kecamatan']) ?>, <?= ucfirst($this->setting->sebutan_kabupaten) ?> <?= ucwords($desa['nama_kabupaten']) ?>, Provinsi  <?= ucwords($desa['nama_propinsi']) ?>" />
 <?php endif; ?>
 <meta property='og:url' content="<?= current_url(); ?>" />
 <?php if(is_file(LOKASI_LOGO_DESA . "favicon.ico")): ?>
