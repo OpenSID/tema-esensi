@@ -9,8 +9,8 @@
       <?php foreach($aparatur_desa['daftar_perangkat'] as $data) : ?>
         <div class="relative space-y-2">
           <img src="<?= $data['foto'] ?>" alt="<?= $data['nama'] ?>" class="w-full object-cover object-center bg-gray-300">
-          <?php if($this->web_widget_model->get_setting('aparatur_desa', 'overlay') === true) : ?>
-            <div class="space-y-1 text-sm text-center">
+          <?php if($this->web_widget_model->get_setting('aparatur_desa', 'overlay') == true) : ?>
+            <div class="space-y-1 text-sm text-center z-10">
               <span class="text-h6"><?= $data['nama'] ?></span>
               <span class="block"><?= $data['jabatan'] ?></span>
               <span class="block"><?= $this->setting->sebutan_nip_desa ?> : <?= $data['pamong_niap'] ?></span>
