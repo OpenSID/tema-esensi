@@ -26,7 +26,7 @@
       <?php if($w_gal) : ?>
         <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4" class="block w-10/12 lg:w-1/4 mx-auto">
           <div class="grid grid-flow-col gap-3 shadow-lg pt-2">
-            <?php foreach(array_slice($w_gal, 0, 3) as $gallery) : ?>
+            <?php foreach($w_gal as $album) : ?>
               <?php if(is_file(LOKASI_GALERI . 'kecil_' . $album['gambar'])) : ?>
                 <?php $link = site_url('first/sub_gallery/'.$album['id']) ?>
                 <a href="<?= $link ?>" class="block w-32 h-20" title="<?= $album['nama'] ?>">
