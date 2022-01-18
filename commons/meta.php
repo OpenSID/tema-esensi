@@ -13,7 +13,8 @@
 					. (($desa['nama_desa']) ? ' ' . $desa['nama_desa'] : '');
       $desa_title = $title ?  $title.' - '.$suffix : $suffix ?>
 
-<meta content="utf-8" http-equiv="encoding">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name='viewport' content='width=device-width, initial-scale=1' />
 <meta name='google' content='notranslate' />
@@ -39,9 +40,6 @@
 <meta name="distribution" content="Global">
 <meta name="rating" content="General">
 <meta name="revisit-after" content="7 days">
-<meta http-equiv="Expires" content="0">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="imagetoolbar" content="no"/>
 <meta name="revisit-after" content="7"/>
 <meta name="webcrawlers" content="all"/>
 <meta name="rating" content="general"/>
@@ -72,9 +70,7 @@
 <?php else: ?>
 <link rel="shortcut icon" href="<?= base_url('favicon.ico')?>" />
 <?php endif; ?>
-<noscript>
-  You must have JavaScript enabled in order to use this theme. Please enable JavaScript and then reload this page in order to continue.
-</noscript>
+<noscript>You must have JavaScript enabled in order to use this theme. Please enable JavaScript and then reload this page in order to continue.</noscript>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.6.0/leaflet-providers.min.js"></script>
