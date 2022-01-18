@@ -13,8 +13,8 @@
                 <span>Rp<?= number_format($subdata['realisasi']) ?></span>
                 <span>Rp<?= number_format($subdata['anggaran']) ?></span>
               </div>
-              <div class="w-full bg-gray-200 rounded-full h-3">
-                <div class="bg-secondary-100 text-xs font-medium h-4 text-white text-center p-0.5 leading-none rounded-l-full max-w-full" style="width: <?= $subdata['persen'] ?>%"><?= $subdata['persen'] ?>%</div>
+              <div class="w-full bg-gray-200 rounded-full">
+                <div class="bg-secondary-100 text-xs font-medium text-white text-center p-0.5 leading-none rounded-l-full max-w-full" style="width: <?= $subdata['persen'] ?>%"><?= $subdata['persen'] ?>%</div>
               </div>
             </div>
           <?php endif ?>
