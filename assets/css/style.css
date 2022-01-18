@@ -4205,230 +4205,6 @@ article .box>div:nth-child(2) .table-responsive table, article .box>div:nth-chil
   table-layout: auto !important;
   overflow-x: auto !important;
 }
-article #peraturanForm {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  align-items: flex-end;
-  gap: 1.25rem;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-@media (min-width: 1024px) {
-
-  article #peraturanForm {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-article #peraturanForm .form-group {
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.5rem;
-}
-article #peraturanForm .form-group .label {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-@media (min-width: 1024px) {
-
-  article #peraturanForm .form-group .label {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-}
-article #peraturanForm .form-group select, article #peraturanForm .form-group input {
-  display: block;
-  height: 2.5rem;
-  width: 100%;
-  border-radius: 0.5rem;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
-}
-article #peraturanForm .form-group select:focus, article #peraturanForm .form-group input:focus {
-  border-color: var(--primary-base-color);
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-article #peraturanForm .form-group select[disabled], article #peraturanForm .form-group input[disabled] {
-  cursor: not-allowed;
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-article #peraturanForm button[type=submit]-check[disabled] + .btn {
-  pointer-events: none !important;
-  filter: none !important;
-  opacity: 0.65 !important;
-}
-article #peraturanForm button[type=submit]-check:disabled + .btn {
-  pointer-events: none !important;
-  filter: none !important;
-  opacity: 0.65 !important;
-}
-.input-group article #peraturanForm button[type=submit] {
-  position: relative !important;
-  z-index: 2 !important;
-}
-.input-group article #peraturanForm button[type=submit]:focus {
-  z-index: 3 !important;
-}
-article #peraturanForm button[type=submit]-check:focus + .btn {
-  outline: 0 !important;
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit]:focus {
-  outline: 0 !important;
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit]-check:checked + .btn {
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit]-check:active + .btn {
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit]:active {
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit].active {
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit]-check:checked + .btn:focus {
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit]-check:active + .btn:focus {
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit]:active:focus {
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit].active:focus {
-  box-shadow: none !important;
-}
-article #peraturanForm button[type=submit] .ripple-wave {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%) !important;
-}
-article #peraturanForm button[type=submit] {
-  display: inline-block;
-  border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-article #peraturanForm button[type=submit]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-article #peraturanForm button[type=submit] {
-  background-color: var(--primary-base-color);
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-article #peraturanForm button[type=submit]:hover {
-  background-color: var(--primary-darken-color);
-}
-article #peraturanForm button[type=submit][disabled] {
-  cursor: not-allowed;
-  --tw-bg-opacity: 0.7;
-  opacity: 0.7;
-}
-article #peraturanForm button[type=submit] {
-  margin-top: 0px !important;
-}
-article #info_publik_wrapper {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-article #info_publik_wrapper label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-@media (min-width: 1024px) {
-
-  article #info_publik_wrapper label {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-}
-article #info_publik_wrapper select, article #info_publik_wrapper input {
-  display: block;
-  height: 2.5rem;
-  width: 100%;
-  border-radius: 0.5rem;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
-}
-article #info_publik_wrapper select:focus, article #info_publik_wrapper input:focus {
-  border-color: var(--primary-base-color);
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-article #info_publik_wrapper select[disabled], article #info_publik_wrapper input[disabled] {
-  cursor: not-allowed;
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-article #info_publik_wrapper select, article #info_publik_wrapper input {
-  height: 2rem !important;
-  width: auto !important;
-}
-article #info_publik_wrapper .dataTables_info, article #info_publik_wrapper .dataTables_paginate {
-  font-size: 0.75rem !important;
-  line-height: 1rem !important;
-}
-@media (min-width: 1024px) {
-
-  article #info_publik_wrapper .dataTables_info, article #info_publik_wrapper .dataTables_paginate {
-    font-size: 0.875rem !important;
-    line-height: 1.25rem !important;
-  }
-}
-article #info_publik_wrapper .paginate_button.current {
-          background: var(--primary-base-color) !important;
-          border-radius: 9999px !important;
-          border-width: 0px !important;
-          --tw-text-opacity: 1 !important;
-          color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-        }
 .content h1, .content h2, .content h3 {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -4556,65 +4332,82 @@ article #info_publik_wrapper .paginate_button.current {
 .content .box-header.with-border {
   margin-bottom: 0px !important;
 }
-& .table-responsive {
+.content .table-responsive {
   width: 100%;
   max-width: 100%;
   overflow: auto;
 }
-& .table-responsive::-webkit-scrollbar {
+.content .table-responsive::-webkit-scrollbar {
   height: 0.5rem;
   width: 0.5rem;
 }
-& .table-responsive::-webkit-scrollbar-track {
+.content .table-responsive::-webkit-scrollbar-track {
   border-radius: 9999px;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 /* Handle */
-& .table-responsive::-webkit-scrollbar-thumb {
+.content .table-responsive::-webkit-scrollbar-thumb {
   border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-& .content {
+.content .content {
   width: 100%;
 }
-& table {
+.content .content-wrapper {
+  display: block !important;
+}
+.content table {
   border-collapse: collapse;
   border-width: 1px;
 }
-& table td {
+.content table td {
   border-width: 1px;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-& table th {
+.content table th {
   font-weight: 700;
 }
-& table.table-striped tr:nth-child(even) {
+.content table.table-striped tr:nth-child(even) {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-.dataTables label, .dataTables_wrapper label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+.content #peraturanForm {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  align-items: flex-end;
+  gap: 1.25rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+@media (min-width: 1024px) {
+
+  .content #peraturanForm {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.content #peraturanForm .form-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.content #peraturanForm .form-group .label {
   font-size: 0.75rem;
   line-height: 1rem;
 }
 @media (min-width: 1024px) {
 
-  .dataTables label, .dataTables_wrapper label {
+  .content #peraturanForm .form-group .label {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 }
-.dataTables select, .dataTables input, .dataTables_wrapper select, .dataTables_wrapper input {
+.content #peraturanForm .form-group select, .content #peraturanForm .form-group input {
   display: block;
   height: 2.5rem;
   width: 100%;
@@ -4632,7 +4425,7 @@ article #info_publik_wrapper .paginate_button.current {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
 }
-.dataTables select:focus, .dataTables input:focus, .dataTables_wrapper select:focus, .dataTables_wrapper input:focus {
+.content #peraturanForm .form-group select:focus, .content #peraturanForm .form-group input:focus {
   border-color: var(--primary-base-color);
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
@@ -4640,82 +4433,64 @@ article #info_publik_wrapper .paginate_button.current {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-.dataTables select[disabled], .dataTables input[disabled], .dataTables_wrapper select[disabled], .dataTables_wrapper input[disabled] {
+.content #peraturanForm .form-group select[disabled], .content #peraturanForm .form-group input[disabled] {
   cursor: not-allowed;
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-.dataTables select, .dataTables input, .dataTables_wrapper select, .dataTables_wrapper input {
-  height: 2rem !important;
-  width: auto !important;
-}
-.dataTables .dataTables_info, .dataTables .dataTables_paginate, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate {
-  font-size: 0.75rem !important;
-  line-height: 1rem !important;
-}
-@media (min-width: 1024px) {
-
-  .dataTables .dataTables_info, .dataTables .dataTables_paginate, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate {
-    font-size: 0.875rem !important;
-    line-height: 1.25rem !important;
-  }
-}
-.dataTables .paginate_button, .dataTables_wrapper .paginate_button {
-      background: #efefef !important;
-    }
-.dataTables .paginate_button-check[disabled] + .btn, .dataTables_wrapper .paginate_button-check[disabled] + .btn {
+.content #peraturanForm button[type=submit]-check[disabled] + .btn {
   pointer-events: none !important;
   filter: none !important;
   opacity: 0.65 !important;
 }
-.dataTables .paginate_button-check:disabled + .btn, .dataTables_wrapper .paginate_button-check:disabled + .btn {
+.content #peraturanForm button[type=submit]-check:disabled + .btn {
   pointer-events: none !important;
   filter: none !important;
   opacity: 0.65 !important;
 }
-.input-group .dataTables .paginate_button, .input-group .dataTables_wrapper .paginate_button {
+.input-group .content #peraturanForm button[type=submit] {
   position: relative !important;
   z-index: 2 !important;
 }
-.input-group .dataTables .paginate_button:focus, .input-group .dataTables_wrapper .paginate_button:focus {
+.input-group .content #peraturanForm button[type=submit]:focus {
   z-index: 3 !important;
 }
-.dataTables .paginate_button-check:focus + .btn, .dataTables_wrapper .paginate_button-check:focus + .btn {
+.content #peraturanForm button[type=submit]-check:focus + .btn {
   outline: 0 !important;
   box-shadow: none !important;
 }
-.dataTables .paginate_button:focus, .dataTables_wrapper .paginate_button:focus {
+.content #peraturanForm button[type=submit]:focus {
   outline: 0 !important;
   box-shadow: none !important;
 }
-.dataTables .paginate_button-check:checked + .btn, .dataTables_wrapper .paginate_button-check:checked + .btn {
+.content #peraturanForm button[type=submit]-check:checked + .btn {
   box-shadow: none !important;
 }
-.dataTables .paginate_button-check:active + .btn, .dataTables_wrapper .paginate_button-check:active + .btn {
+.content #peraturanForm button[type=submit]-check:active + .btn {
   box-shadow: none !important;
 }
-.dataTables .paginate_button:active, .dataTables_wrapper .paginate_button:active {
+.content #peraturanForm button[type=submit]:active {
   box-shadow: none !important;
 }
-.dataTables .paginate_button.active, .dataTables_wrapper .paginate_button.active {
+.content #peraturanForm button[type=submit].active {
   box-shadow: none !important;
 }
-.dataTables .paginate_button-check:checked + .btn:focus, .dataTables_wrapper .paginate_button-check:checked + .btn:focus {
+.content #peraturanForm button[type=submit]-check:checked + .btn:focus {
   box-shadow: none !important;
 }
-.dataTables .paginate_button-check:active + .btn:focus, .dataTables_wrapper .paginate_button-check:active + .btn:focus {
+.content #peraturanForm button[type=submit]-check:active + .btn:focus {
   box-shadow: none !important;
 }
-.dataTables .paginate_button:active:focus, .dataTables_wrapper .paginate_button:active:focus {
+.content #peraturanForm button[type=submit]:active:focus {
   box-shadow: none !important;
 }
-.dataTables .paginate_button.active:focus, .dataTables_wrapper .paginate_button.active:focus {
+.content #peraturanForm button[type=submit].active:focus {
   box-shadow: none !important;
 }
-.dataTables .paginate_button .ripple-wave, .dataTables_wrapper .paginate_button .ripple-wave {
+.content #peraturanForm button[type=submit] .ripple-wave {
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%) !important;
 }
-.dataTables .paginate_button, .dataTables_wrapper .paginate_button {
+.content #peraturanForm button[type=submit] {
   display: inline-block;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
@@ -4730,30 +4505,50 @@ article #info_publik_wrapper .paginate_button.current {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.dataTables .paginate_button:hover, .dataTables_wrapper .paginate_button:hover {
+.content #peraturanForm button[type=submit]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.dataTables .paginate_button[disabled], .dataTables_wrapper .paginate_button[disabled] {
+.content #peraturanForm button[type=submit] {
+  background-color: var(--primary-base-color);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.content #peraturanForm button[type=submit]:hover {
+  background-color: var(--primary-darken-color);
+}
+.content #peraturanForm button[type=submit][disabled] {
   cursor: not-allowed;
   --tw-bg-opacity: 0.7;
   opacity: 0.7;
 }
-.dataTables .paginate_button, .dataTables_wrapper .paginate_button {
-  border-radius: 9999px !important;
-  border-width: 0px !important;
+.content #peraturanForm button[type=submit] {
+  margin-top: 0px !important;
 }
-.dataTables .paginate_button.current, .dataTables_wrapper .paginate_button.current {
-        background: var(--primary-base-color) !important;
-        border-radius: 9999px !important;
-        border-width: 0px !important;
-        --tw-text-opacity: 1 !important;
-        color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-      }
-& select, & input {
+.content #info_publik_wrapper {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.content .dataTables label, .content .dataTables_wrapper label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+@media (min-width: 1024px) {
+
+  .content .dataTables label, .content .dataTables_wrapper label {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+.content .dataTables select, .content .dataTables input, .content .dataTables_wrapper select, .content .dataTables_wrapper input {
   display: block;
   height: 2.5rem;
   width: 100%;
@@ -4771,7 +4566,7 @@ article #info_publik_wrapper .paginate_button.current {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
 }
-& select:focus, & input:focus {
+.content .dataTables select:focus, .content .dataTables input:focus, .content .dataTables_wrapper select:focus, .content .dataTables_wrapper input:focus {
   border-color: var(--primary-base-color);
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
@@ -4779,15 +4574,119 @@ article #info_publik_wrapper .paginate_button.current {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-& select[disabled], & input[disabled] {
+.content .dataTables select[disabled], .content .dataTables input[disabled], .content .dataTables_wrapper select[disabled], .content .dataTables_wrapper input[disabled] {
   cursor: not-allowed;
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-& select, & input {
+.content .dataTables select, .content .dataTables input, .content .dataTables_wrapper select, .content .dataTables_wrapper input {
   height: 2rem !important;
   width: auto !important;
 }
+.content .dataTables .dataTables_info, .content .dataTables .dataTables_paginate, .content .dataTables_wrapper .dataTables_info, .content .dataTables_wrapper .dataTables_paginate {
+  font-size: 0.75rem !important;
+  line-height: 1rem !important;
+}
+@media (min-width: 1024px) {
+
+  .content .dataTables .dataTables_info, .content .dataTables .dataTables_paginate, .content .dataTables_wrapper .dataTables_info, .content .dataTables_wrapper .dataTables_paginate {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+  }
+}
+.content .dataTables .paginate_button, .content .dataTables_wrapper .paginate_button {
+        background: #efefef !important;
+      }
+.content .dataTables .paginate_button-check[disabled] + .btn, .content .dataTables_wrapper .paginate_button-check[disabled] + .btn {
+  pointer-events: none !important;
+  filter: none !important;
+  opacity: 0.65 !important;
+}
+.content .dataTables .paginate_button-check:disabled + .btn, .content .dataTables_wrapper .paginate_button-check:disabled + .btn {
+  pointer-events: none !important;
+  filter: none !important;
+  opacity: 0.65 !important;
+}
+.input-group .content .dataTables .paginate_button, .input-group .content .dataTables_wrapper .paginate_button {
+  position: relative !important;
+  z-index: 2 !important;
+}
+.input-group .content .dataTables .paginate_button:focus, .input-group .content .dataTables_wrapper .paginate_button:focus {
+  z-index: 3 !important;
+}
+.content .dataTables .paginate_button-check:focus + .btn, .content .dataTables_wrapper .paginate_button-check:focus + .btn {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button:focus, .content .dataTables_wrapper .paginate_button:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button-check:checked + .btn, .content .dataTables_wrapper .paginate_button-check:checked + .btn {
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button-check:active + .btn, .content .dataTables_wrapper .paginate_button-check:active + .btn {
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button:active, .content .dataTables_wrapper .paginate_button:active {
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button.active, .content .dataTables_wrapper .paginate_button.active {
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button-check:checked + .btn:focus, .content .dataTables_wrapper .paginate_button-check:checked + .btn:focus {
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button-check:active + .btn:focus, .content .dataTables_wrapper .paginate_button-check:active + .btn:focus {
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button:active:focus, .content .dataTables_wrapper .paginate_button:active:focus {
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button.active:focus, .content .dataTables_wrapper .paginate_button.active:focus {
+  box-shadow: none !important;
+}
+.content .dataTables .paginate_button .ripple-wave, .content .dataTables_wrapper .paginate_button .ripple-wave {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%) !important;
+}
+.content .dataTables .paginate_button, .content .dataTables_wrapper .paginate_button {
+  display: inline-block;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.content .dataTables .paginate_button:hover, .content .dataTables_wrapper .paginate_button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.content .dataTables .paginate_button[disabled], .content .dataTables_wrapper .paginate_button[disabled] {
+  cursor: not-allowed;
+  --tw-bg-opacity: 0.7;
+  opacity: 0.7;
+}
+.content .dataTables .paginate_button, .content .dataTables_wrapper .paginate_button {
+  border-radius: 9999px !important;
+  border-width: 0px !important;
+}
+.content .dataTables .paginate_button.current, .content .dataTables_wrapper .paginate_button.current {
+          background: var(--primary-base-color) !important;
+          border-radius: 9999px !important;
+          border-width: 0px !important;
+          --tw-text-opacity: 1 !important;
+          color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+        }
 .pointer-events-none {
   pointer-events: none;
 }
@@ -7470,8 +7369,8 @@ article #info_publik_wrapper .paginate_button.current {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-.owl-carousel .owl-stage-outer{
-  transform:translate3d(0,0,0)
+.owl-carousel .owl-stage-outer {
+  transform: translate3d(0, 0, 0)
 }
 .sliderx .owl-item {
   margin-left: 0px !important;
