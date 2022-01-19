@@ -3,7 +3,7 @@
 <?php $is_premium = preg_match('/premium/', ambilVersi()) ?>
 <?php $nama_desa = ucwords($this->setting->sebutan_desa) .' '.ucwords($desa['nama_desa']) ?>
 
-<?php defined('THEME_VERSION') or define('THEME_VERSION', 'v1.0-alpha') ?>
+<?php defined('THEME_VERSION') or define('THEME_VERSION', 'v1.0-beta') ?>
 <?php defined('IS_PREMIUM') or define('IS_PREMIUM', $is_premium) ?>
 <?php defined('NAMA_DESA') or define('NAMA_DESA', $nama_desa) ?>
 
@@ -18,7 +18,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name='viewport' content='width=device-width, initial-scale=1' />
 <meta name='google' content='notranslate' />
-<meta name='theme' content='Lutra' />
+<meta name='theme' content='Esensi' />
 <meta name='designer' content='Diki Siswanto' />
 <meta name='theme:designer' content='Diki Siswanto' />
 <meta name='theme:version' content='<?= THEME_VERSION ?>' />
