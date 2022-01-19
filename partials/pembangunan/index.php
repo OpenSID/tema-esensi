@@ -29,15 +29,15 @@
         <?= $data->keterangan ?>
       </p>
     </div>
-  </div>
-  <div class="group flex items-center space-x-1">
-    <a href="<?= site_url('pembangunan/'.$data->slug) ?>"
-      class="btn btn-primary text-xs text-center rounded-0">Selengkapnya <i class="fas fa-chevron-right ml-1"></i> </a>
-    <?php if($data->lat && $data->lng) : ?>
-    <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal"
-      data-bs-target="#modalLokasi" data-bs-remote="false" title="Lokasi Pembangunan" data-lat="<?= $data->lat?>"
-      data-lng="<?= $data->lng?>" data-title="Lokasi Pembangunan"><i class="fas fa-map-marker-alt mr-2"></i> Lokasi</button>
-    <?php endif ?>
+    <div class="group flex items-center space-x-1">
+      <a href="<?= site_url('pembangunan/'.$data->slug) ?>"
+        class="btn btn-primary text-xs text-center rounded-0">Selengkapnya <i class="fas fa-chevron-right ml-1"></i> </a>
+      <?php if($data->lat && $data->lng) : ?>
+      <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal"
+        data-bs-target="#modalLokasi" data-bs-remote="false" title="Lokasi Pembangunan" data-lat="<?= $data->lat?>"
+        data-lng="<?= $data->lng?>" data-title="Lokasi Pembangunan"><i class="fas fa-map-marker-alt mr-2"></i> Lokasi</button>
+      <?php endif ?>
+    </div>
   </div>
 <?php endforeach ?>
 </div>

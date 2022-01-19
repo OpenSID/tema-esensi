@@ -6,7 +6,7 @@
   </ol>
 </nav>
 <h2 class="text-h2"></i> <?= $pembangunan->judul ?></h2>
-<div class="flex flex-col lg:flex-row justify-between lg:space-x-4 py-5">
+<div class="flex flex-col lg:flex-row justify-between gap-3 lg:gap-5 py-5">
   <div class="w-full px-2">
     <?php if($pembangunan->foto && is_file(LOKASI_GALERI . $pembangunan->foto)) : ?>
       <img class="h-auto w-full" src="<?= base_url() . LOKASI_GALERI . $pembangunan->foto ?>" alt="Foto Pembangunan"/>
@@ -60,7 +60,7 @@
       </table>
     </div>
   </div>
-  <div class="w-full px-2">
+  <div class="w-full px-2 space-y-5">
     <h3 class="text-h4">Progres Pembangunan</h3>
     <hr>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
