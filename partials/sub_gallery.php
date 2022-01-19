@@ -14,7 +14,7 @@
     <?php foreach($gallery as $album) : ?>
       <?php if(is_file(LOKASI_GALERI . "kecil_" . $album['gambar'])) : ?>
         <?php $link = AmbilGaleri($album['gambar'],'sedang') ?>
-        <a href="<?= $link ?>" data-fancybox="images" data-caption="<?= $data['nama'] ?>" class="h-44 w-full block bg-gray-300">
+        <a href="<?= $link ?>" data-fancybox="images" data-caption="<?= $album['nama'] ?>" class="h-44 w-full block bg-gray-300">
           <img src="<?= AmbilGaleri($album['gambar'],'kecil') ?>" alt="<?= $album['nama'] ?>" class="h-44 w-full object-cover object-center" title="<?= $album['nama'] ?>">
         </a>
       <?php endif ?>
