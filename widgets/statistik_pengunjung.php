@@ -1,6 +1,6 @@
 <div class="box box-primary box-solid">
 	<div class="box-header">
-		<h3 class="box-title"><i class="fa fa-bar-chart-o"></i> Statistik Pengunjung</h3>
+		<h3 class="box-title"><i class="fas fa-chart-line"></i> Statistik Pengunjung</h3>
 	</div>
 	<div class="box-body">
 		<?php
