@@ -7,32 +7,26 @@
 <?php 
   $social_media = [
     'facebook' => [
-      'link' => '',
       'color' => 'bg-blue-600',
       'icon' => 'fa-facebook-f'
     ],
     'twitter' => [
-      'link' => '',
       'color' => 'bg-blue-400',
       'icon' => 'fa-twitter'
     ],
     'instagram' => [
-      'link' => '',
       'color' => 'bg-pink-500',
       'icon' => 'fa-instagram'
     ],
     'telegram' => [
-      'link' => '',
       'color' => 'bg-blue-500',
       'icon' => 'fa-telegram'
     ],
     'whatsapp' => [
-      'link' => '',
       'color' => 'bg-green-500',
       'icon' => 'fa-whatsapp'
     ],
     'youtube' => [
-      'link' => '',
       'color' => 'bg-red-500',
       'icon' => 'fa-youtube'
     ]
@@ -46,6 +40,8 @@
     ?>
   <?php endif ?>
 <?php endforeach ?>
+
+<?php $this->load->view($folder_themes .'/commons/back_to_top') ?>
 
 <footer class="container mx-auto lg:px-5 px-3 pt-5 footer">
   <div class="bg-zinc-700 text-white py-5 px-5 rounded-t-xl text-sm flex flex-col gap-3 lg:flex-row justify-between items-center text-center lg:text-left">
