@@ -52,14 +52,14 @@
 
       <?php $alert = ($notif['status'] == -1) ? 'error' : 'success'; ?>
       <?php if ($flash_message = $notif['pesan']): ?>
-        <div class="alert alert-<?= $alert ?> text-sm"><?= $flash_message?></div>
+        <div class="alert alert-<?= $alert ?> text-sm"><i class="<?php $notif['status'] != -1 and print('fas fa-check mr-2')  ?>"></i><?= $flash_message?></div>
       <?php endif; ?>
 
       <div class="space-y-2">
         <label for="komentar" class="text-xs lg:text-sm">Komentar <span style="color:red">*</span></label>
         <textarea class="form-textarea" name="komentar" id="komentar" cols="30" rows="4" required><?= $notif['data']['komentar'] ?></textarea>
       </div>
-      <div class="grid grid-flow-col auto-cols gap-3">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
         <?php foreach($forms as $name => $label) : ?>
           <div class="space-y-2">
             <label for="<?= $name ?>" class="text-xs lg:text-sm"><?= $label ?> <?php if($name !== 'email') : ?><span style="color:red">*</span><?php endif ?></label>
@@ -67,9 +67,9 @@
           </div>
         <?php endforeach ?>
       </div>
-      <div class="flex gap-3">
+      <div class="flex flex-col lg:flex-row gap-3">
         <div class="group">
-          <img id="captcha" src="<?= base_url('securimage/securimage_show.php') ?>" alt="CAPTCHA Image" class="w-48 h-auto">
+          <img id="captcha" src="<?= base_url('securimage/securimage_show.php') ?>" alt="CAPTCHA Image" class="w-1/2 lg:w-1/4 h-auto">
           <button type="button" class="hover:text-link text-xs lg:text-sm" onclick="document.getElementById('captcha').src = '<?= base_url("securimage/securimage_show.php?")?>'+Math.random(); return false">[Ganti Gambar]</button>
         </div>
         <input type="text" name="captcha_code" class="form-input" placeholder="Masukkan captcha di samping">
