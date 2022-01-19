@@ -5,7 +5,7 @@
     <h3 class="box-title"><i class="fas fa-calendar-alt"></i> Agenda</h3>
   </div>
   <div class="box-body">
-    <ul class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4" id="tab-agenda" role="tablist">
+    <ul class="nav nav-tabs flex flex-wrap list-none border-b-0 pl-0 mb-4" id="tab-agenda" role="tablist">
       <?php if (count($hari_ini) > 0): ?>
       <li class="nav-item flex-grow text-center active" role="presentation"><a href="#hari-ini" class="nav-link font-medium border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active" data-bs-toggle="pill" data-bs-target="#hari-ini" role="tab"
       aria-controls="hari-ini" aria-selected="true" data-toggle="tab" href="#hari-ini">Hari ini</a></li>
