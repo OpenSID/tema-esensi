@@ -75,13 +75,12 @@
         </div>
       <?php endforeach; ?>
       <?php if(!$dokumentasi) : ?>
-        <p class="mb-5">Belum ada dokumentasi.</p>
+        <p class="py-5">Belum ada dokumentasi.</p>
       <?php endif ?>
     </div>
 
     <div class="mt-5">
-      <h3 class="font-heading text-lg">Lokasi Pembangunan</h3>
-      <hr>
+      <h3 class="text-h4">Lokasi Pembangunan</h3>
       <div id="map" style="max-width: 100%; max-height: 340px"></div>
     </div>
   </div>

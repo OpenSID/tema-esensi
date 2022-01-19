@@ -32,12 +32,11 @@
   </div>
   <div class="group flex items-center space-x-1">
     <a href="<?= site_url('pembangunan/'.$data->slug) ?>"
-      class="btn btn-primary text-xs text-center rounded-0">Selengkapnya <i class="chevron-right ml-1"></i> </a>
+      class="btn btn-primary text-xs text-center rounded-0">Selengkapnya <i class="fas fa-chevron-right ml-1"></i> </a>
     <?php if($data->lat && $data->lng) : ?>
     <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal"
       data-bs-target="#modalLokasi" data-bs-remote="false" title="Lokasi Pembangunan" data-lat="<?= $data->lat?>"
-      data-lng="<?= $data->lng?>" data-title="Lokasi Pembangunan"><i class="fas fa-map-marker-alt mr-2"></i>
-      Lokasi</button>
+      data-lng="<?= $data->lng?>" data-title="Lokasi Pembangunan"><i class="fas fa-map-marker-alt mr-2"></i> Lokasi</button>
     <?php endif ?>
   </div>
 <?php endforeach ?>
@@ -46,14 +45,13 @@
 <?php $p_data['paging_page'] = ($paging_page ?? 'pembangunan') ?>
 <?php $this->load->view($folder_themes .'/commons/paging', $p_data) ?>
 
-<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
-  id="modalLokasi" tabindex="-1" aria-modal="true" role="dialog">
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="modalLokasi" tabindex="-1" aria-modal="true" role="dialog">
   <div class="modal-dialog relative w-auto pointer-events-none">
     <div
       class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
       <div
         class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-        <h5 class="text-xl font-medium leading-normal text-gray-800">Lokasi Penjual</h5>
+        <h5 class="text-h5">Lokasi Pembangunan</h5>
       </div>
       <div class="modal-body p-4">
       </div>
