@@ -69,7 +69,7 @@
       </div>
       <div class="flex flex-col lg:flex-row gap-3">
         <div class="group">
-          <img id="captcha" src="<?= base_url('securimage/securimage_show.php') ?>" alt="CAPTCHA Image" class="w-1/2 lg:w-1/4 h-auto">
+          <img id="captcha" src="<?= base_url('securimage/securimage_show.php') ?>" alt="CAPTCHA Image" class="max-w-full h-auto">
           <button type="button" class="hover:text-link text-xs lg:text-sm" onclick="document.getElementById('captcha').src = '<?= base_url("securimage/securimage_show.php?")?>'+Math.random(); return false">[Ganti Gambar]</button>
         </div>
         <input type="text" name="captcha_code" class="form-input" placeholder="Masukkan captcha di samping">
