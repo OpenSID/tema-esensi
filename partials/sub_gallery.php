@@ -4,7 +4,7 @@
   <ol>
     <li><a href="<?= site_url() ?>">Beranda</a></li>
     <li><a href="<?= site_url('first/gallery') ?>">Galeri</a></li>
-    <li aria-current="page"><?= $parrent['nama'] ?></li>
+    <li aria-current="page"><?= $parent['nama'] ?></li>
   </ol>
 </nav>
 <h2 class="text-h2">Galeri Album <?= $parrent['nama'] ?></h2>
