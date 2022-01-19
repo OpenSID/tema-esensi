@@ -8,9 +8,9 @@
 ?>
 
 <?php if($headline) : ?>
-  <div class="lg:h-[350px] h-40 overflow-hidden rounded-lg relative">
-    <figure class="lg:h-[350px] h-40">
-      <img src="<?= $image ?>" alt="<?= $headline['judul'] ?>" class=" lg:h-[350px] h-40 w-full object-cover object-center">
+  <div class="lg:h-[350px] h-44 overflow-hidden rounded-lg relative">
+    <figure class="lg:h-[350px] h-44">
+      <img src="<?= $image ?>" alt="<?= $headline['judul'] ?>" class=" lg:h-[350px] h-44 w-full object-cover object-center">
     </figure>
     <div class="absolute bg-black bg-opacity-60 bottom-0 left-0 right-0 text-white group">
       <a href="<?= $url ?>" class="font-bold text-h5 block py-4 px-5 group-hover:py-5 transition-all duration-300"><?= $headline['judul'] ?></a>
