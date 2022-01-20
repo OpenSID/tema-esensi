@@ -39,16 +39,18 @@
       <?php endif ?>
     </section>
     <?php if($teks_berjalan) : ?>
-      <marquee onmouseover="this.stop();" onmouseout="this.start();" class="block bg-white bg-opacity-20 py-1.5 text-xs text-white mt-6 mb-0 z-20 relative divide-x-4">
-        <?php foreach($teks_berjalan as $marquee) : ?>
-          <span class="px-3">
-            <?= $marquee['teks'] ?>
-            <?php if(trim($marquee['tautan']) && $marquee['judul_tautan']) : ?>
-            <a href="<?= $marquee['tautan'] ?>" class="hover:text-link"><?= $marquee['judul_tautan']?></a>
-            <?php endif ?>
-          </span>
-        <?php endforeach ?>
-      </marquee>
+      <div class="block px-3 bg-white text-white bg-opacity-20 py-1.5 text-xs mt-6 mb-0 z-20 relative">
+        <marquee onmouseover="this.stop();" onmouseout="this.start();" class="block divide-x-4 relative">
+          <?php foreach($teks_berjalan as $marquee) : ?>
+            <span class="px-3">
+              <?= $marquee['teks'] ?>
+              <?php if(trim($marquee['tautan']) && $marquee['judul_tautan']) : ?>
+              <a href="<?= $marquee['tautan'] ?>" class="hover:text-link"><?= $marquee['judul_tautan']?></a>
+              <?php endif ?>
+            </span>
+          <?php endforeach ?>
+        </marquee>
+      </div>
     <?php endif ?>
   </header>
   <?php $this->load->view($folder_themes .'/commons/main_menu') ?>
