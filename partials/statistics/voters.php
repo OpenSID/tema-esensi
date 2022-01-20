@@ -35,8 +35,8 @@
       <?php endforeach; ?>
     </tbody>
     <tfoot>
-      <tr>
-        <td colspan="3" class="text-right">TOTAL</td>
+      <tr class="font-bold">
+        <td colspan="3" class="text-left">TOTAL</td>
         <td class="text-right"><?= $total['total_warga']; ?></td>
         <td class="text-right"><?= $total['total_warga_l']; ?></td>
         <td class="text-right"><?= $total['total_warga_p']; ?></td>
