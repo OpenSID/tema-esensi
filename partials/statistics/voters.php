@@ -34,13 +34,13 @@
         <?php $i = $i+$data['jumlah']; ?>
       <?php endforeach; ?>
     </tbody>
-    <tfooter>
+    <tfoot>
       <tr>
-        <td colspan="3" class="angka">TOTAL</td>
-        <td class="angka"><?= $total['total_warga']; ?></td>
-        <td class="angka"><?= $total['total_warga_l']; ?></td>
-        <td class="angka"><?= $total['total_warga_p']; ?></td>
+        <td colspan="3" class="text-right">TOTAL</td>
+        <td class="text-right"><?= $total['total_warga']; ?></td>
+        <td class="text-right"><?= $total['total_warga_l']; ?></td>
+        <td class="text-right"><?= $total['total_warga_p']; ?></td>
       </tr>
-    </tfooter>
+    </tfoot>
   </table>
 </div>
