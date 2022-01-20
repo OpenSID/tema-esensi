@@ -25,21 +25,21 @@
         <?php foreach($main as $data): ?>
           <tr>
             <td class="text-center"><?= $data['no'] ?></td>
-            <td><?= strtoupper($data['dusun']) ?></td>
-            <td><?= strtoupper($data['rw']) ?></td>
-            <td><?= $data['jumlah_warga'] ?></td>
-            <td><?= $data['jumlah_warga_l'] ?></td>
-            <td><?= $data['jumlah_warga_p'] ?></td>
+            <td class="text-right"><?= strtoupper($data['dusun']) ?></td>
+            <td class="text-right"><?= strtoupper($data['rw']) ?></td>
+            <td class="text-right"><?= $data['jumlah_warga'] ?></td>
+            <td class="text-right"><?= $data['jumlah_warga_l'] ?></td>
+            <td class="text-right"><?= $data['jumlah_warga_p'] ?></td>
           </tr>
         <?php $i = $i+$data['jumlah']; ?>
       <?php endforeach; ?>
     </tbody>
     <tfooter>
       <tr>
-        <th colspan="3" class="angka">TOTAL</th>
-        <th class="angka"><?= $total['total_warga']; ?></th>
-        <th class="angka"><?= $total['total_warga_l']; ?></th>
-        <th class="angka"><?= $total['total_warga_p']; ?></th>
+        <td colspan="3" class="angka">TOTAL</td>
+        <td class="angka"><?= $total['total_warga']; ?></td>
+        <td class="angka"><?= $total['total_warga_l']; ?></td>
+        <td class="angka"><?= $total['total_warga_p']; ?></td>
       </tr>
     </tfooter>
   </table>
