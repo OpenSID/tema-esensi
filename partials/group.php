@@ -50,11 +50,11 @@
     <tbody>
       <?php foreach ($anggota as $key => $data): ?>
       <tr>
-        <td><?= $key + 1?></td>
-        <td><?= $data['no_anggota'] ?:'-'?></td>
+        <td><?= ($key + 1) ?></td>
+        <td><?= $data['no_anggota'] ?:'-' ?></td>
         <td nowrap><?= $data['nama'] ?></td>
         <td><?= $data['alamat'] ?></td>
-        <td><?= ($data['sex'] ?></td>
+        <td><?= $data['sex'] ?></td>
       </tr>
       <?php endforeach; ?>
     </tbody>
