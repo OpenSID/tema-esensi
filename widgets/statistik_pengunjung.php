@@ -29,24 +29,22 @@
 			return $num;
 		}
 		?>
-		<div class="">
-			<table cellpadding="0" cellspacing="0" class="counter w-full border-0 divide-y">
-				<tr class="py-2">
-					<td> Hari ini</td>
-					<td class="inline-flex w-full justify-end text-right">
-						<?= num_toimage($statistik_pengunjung['hari_ini'], $statistik_pengunjung['total']); ?></td>
-				</tr>
-				<tr class="py-2">
-					<td valign="middle" height="20">Kemarin </td>
-					<td valign="middle" class="inline-flex w-full justify-end text-right">
-						<?= num_toimage($statistik_pengunjung['kemarin'], $statistik_pengunjung['total']); ?></td>
-				</tr>
-				<tr class="py-2">
-					<td valign="middle" height="20">Jumlah pengunjung</td>
-					<td valign="middle" class="inline-flex w-full justify-end text-right">
-						<?= num_toimage($statistik_pengunjung['total'], $statistik_pengunjung['total']); ?></td>
-				</tr>
-			</table>
-		</div>
+		<table cellpadding="0" cellspacing="0" class="counter w-full divide-y">
+			<tr class="py-4">
+				<td> Hari ini</td>
+				<td class="inline-flex w-full justify-end text-right">
+					<?= num_toimage($statistik_pengunjung['hari_ini'], $statistik_pengunjung['total']); ?></td>
+			</tr>
+			<tr class="py-4">
+				<td valign="middle">Kemarin </td>
+				<td valign="middle" class="inline-flex w-full justify-end text-right">
+					<?= num_toimage($statistik_pengunjung['kemarin'], $statistik_pengunjung['total']); ?></td>
+			</tr>
+			<tr class="py-4">
+				<td valign="middle">Jumlah pengunjung</td>
+				<td valign="middle" class="inline-flex w-full justify-end text-right">
+					<?= num_toimage($statistik_pengunjung['total'], $statistik_pengunjung['total']); ?></td>
+			</tr>
+		</table>
 	</div>
 </div>
