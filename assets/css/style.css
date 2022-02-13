@@ -7338,6 +7338,12 @@ article .box>div:nth-child(2) .table-responsive table, article .box>div:nth-chil
 .duration-200 {
   transition-duration: 200ms;
 }
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
 .form-control {
   display: block;
   height: 2.5rem;
