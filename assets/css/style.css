@@ -4407,6 +4407,9 @@ article .box>div:nth-child(2) .table-responsive table, article .box>div:nth-chil
 .z-\[-10\] {
   z-index: -10;
 }
+.z-\[999\] {
+  z-index: 999;
+}
 .z-\[99\] {
   z-index: 99;
 }
