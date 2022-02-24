@@ -243,26 +243,26 @@
   });
   
   $(document).ready(function() {
-		window.setTimeout(function() {
-			$("#notifikasi").fadeTo(500, 0).slideUp(500, function() {
-				$(this).remove();
-			});
-		}, 1000);
+    window.setTimeout(function() {
+      $("#notifikasi").fadeTo(500, 0).slideUp(500, function() {
+        $(this).remove();
+      });
+    }, 1000);
 
-		var data = "<?= session('notif')['data'] ?>";
-		if (data) {
-			$('#newpengaduan').modal('show');
-		}
-	});
+    var data = "<?= session('notif')['data'] ?>";
+    if (data) {
+      $('#newpengaduan').modal('show');
+    }
+  });
 
-	$('#b-captcha').click();
+  $('#b-captcha').click();
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
 
       reader.onload = function (e) {
         $('#blah').removeClass('hidden');
-				$('#blah').attr('src', e.target.result).width(150).height(auto);
+        $('#blah').attr('src', e.target.result).width(150).height(auto);
       };
 
       reader.readAsDataURL(input.files[0]);
