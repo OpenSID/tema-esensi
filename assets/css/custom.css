@@ -6,3 +6,10 @@
   --accent-base-color: #00BA88;
   --accent-darken-color: #00966D;
 }
+
+.status-kehadiran {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
