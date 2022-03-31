@@ -91,7 +91,7 @@
                 <?php endforeach; ?>
             <?php endif ?>
           <?php else: ?>
-          <p>Data tidak tersedia</p>
+          <p class="py-3">Data tidak tersedia</p>
         <?php endif; ?>
       <?php endif; ?>
     </main>
