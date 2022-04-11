@@ -24,7 +24,7 @@
 
 <div class="content space-y-2 py-4">
   <?php if($post['gambar'] && is_file(LOKASI_FOTO_ARTIKEL.'sedang_'.$post['gambar'])) : ?>
-    <a href="<?= AmbilFotoArtikel($post['gambar'],'sedang') ?>" class="h-auto block pb-5" data-fancybox="images">
+    <a href="<?= AmbilFotoArtikel($post['gambar'],'sedang') ?>" class="h-auto block pb-3" data-fancybox="images">
       <figure>
         <img src="<?= AmbilFotoArtikel($post['gambar'],'sedang') ?>" alt="<?= $post['judul'] ?>" class="w-full h-auto">
       </figure>
