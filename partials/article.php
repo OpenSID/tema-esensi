@@ -11,9 +11,9 @@
 </nav>
 
 <article>
-  <h2 class="text-h2">
+  <h1 class="text-h2">
     <?= $post['judul'] ?>
-  </h2>
+  </h1>
   
   <span class="inline-flex flex-wrap gap-x-3 gap-y-2 text-xs lg:text-sm py-2 text-accent-200">
     <span><?= $post['owner'] ?> <i class="fas fa-check text-xs bg-green-500 h-4 w-4 inline-flex items-center justify-center rounded-full text-white"></i></span>
