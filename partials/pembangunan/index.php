@@ -10,38 +10,38 @@
 <?php if($pembangunan) : ?>
   <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 py-5">
     <?php foreach($pembangunan as $data) : ?>
-    <div class="space-y-3">
-      <?php if($data->foto && is_file(LOKASI_GALERI . $data->foto)) : ?>
-      <img class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600"
-        src="<?= base_url() . LOKASI_GALERI . $data->foto ?>" alt="Foto Pembangunan" />
+      <div class="space-y-3">
+        <?php if($data->foto && is_file(LOKASI_GALERI . $data->foto)) : ?>
+        <img class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600"
+          src="<?= base_url() . LOKASI_GALERI . $data->foto ?>" alt="Foto Pembangunan" />
 
-      <?php else: ?>
-      <img class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600"
-        src="<?= base_url('assets/images/404-image-not-found.jpg') ?>" alt="Tidak ditemukan" />
-      <?php endif ?>
-
-      <div class="space-y-2 text-sm flex flex-col detail">
-        <h3 class="text-h5"><?= $data->judul ?></h3>
-        <div class="inline-flex"><i class="fas fa-calendar-alt mr-2"></i> <?= $data->tahun_anggaran ?></div>
-        <div class="font-thin">
-          <i class="fas fa-map-marker-alt mr-1"></i>
-          <?= ($data->alamat == "=== Lokasi Tidak Ditemukan ===") ? 'Lokasi tidak diketahui' : $data->alamat; ?>
-        </div>
-        <p class="text-sm pt-1">
-          <?= $data->keterangan ?>
-        </p>
-      </div>
-      <div class="group flex items-center space-x-1">
-        <a href="<?= site_url('pembangunan/'.$data->slug) ?>"
-          class="btn btn-primary text-xs text-center rounded-0">Selengkapnya <i class="fas fa-chevron-right ml-1"></i> </a>
-        <?php if($data->lat && $data->lng) : ?>
-        <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal"
-          data-bs-target="#modalLokasi" data-bs-remote="false" title="Lokasi Pembangunan" data-lat="<?= $data->lat?>"
-          data-lng="<?= $data->lng?>" data-title="Lokasi Pembangunan"><i class="fas fa-map-marker-alt mr-2"></i> Lokasi</button>
+        <?php else: ?>
+        <img class="h-44 w-full object-cover object-center bg-gray-300 dark:bg-gray-600"
+          src="<?= base_url('assets/images/404-image-not-found.jpg') ?>" alt="Tidak ditemukan" />
         <?php endif ?>
+
+        <div class="space-y-2 text-sm flex flex-col detail">
+          <h3 class="text-h5"><?= $data->judul ?></h3>
+          <div class="inline-flex"><i class="fas fa-calendar-alt mr-2"></i> <?= $data->tahun_anggaran ?></div>
+          <div class="font-thin">
+            <i class="fas fa-map-marker-alt mr-1"></i>
+            <?= ($data->alamat == "=== Lokasi Tidak Ditemukan ===") ? 'Lokasi tidak diketahui' : $data->alamat; ?>
+          </div>
+          <p class="text-sm pt-1">
+            <?= $data->keterangan ?>
+          </p>
+        </div>
+        <div class="group flex items-center space-x-1">
+          <a href="<?= site_url('pembangunan/'.$data->slug) ?>"
+            class="btn btn-primary text-xs text-center rounded-0">Selengkapnya <i class="fas fa-chevron-right ml-1"></i> </a>
+          <?php if($data->lat && $data->lng) : ?>
+          <button type="button" class="btn btn-secondary text-xs text-center rounded-0" data-bs-toggle="modal"
+            data-bs-target="#modalLokasi" data-bs-remote="false" title="Lokasi Pembangunan" data-lat="<?= $data->lat?>"
+            data-lng="<?= $data->lng?>" data-title="Lokasi Pembangunan"><i class="fas fa-map-marker-alt mr-2"></i> Lokasi</button>
+          <?php endif ?>
+        </div>
       </div>
-    </div>
-  <?php endforeach ?>
+    <?php endforeach ?>
   </div>
 
   <?php $p_data['paging_page'] = ($paging_page ?? 'pembangunan') ?>
