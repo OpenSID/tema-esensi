@@ -88,7 +88,7 @@
         pembangunan = L.map('map').setView(posisi, zoom);
 
         // Menampilkan BaseLayers Peta
-        getBaseLayers(pembangunan, MAPBOX_KEY, JENIS_PETA);
+        getBaseLayers(pembangunan, "<?= setting('mapbox_key') ?>", "<?= setting('jenis_peta') ?>");
 
         // Tampilkan Posisi pembangunan
         marker = new L.Marker(posisi, {

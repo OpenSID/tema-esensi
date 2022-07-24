@@ -110,7 +110,7 @@
         pelapak = L.map('map').setView(posisi, zoom);
 
         // Menampilkan BaseLayers Peta
-        getBaseLayers(pelapak, MAPBOX_KEY, JENIS_PETA);
+        getBaseLayers(pelapak, "<?= setting('mapbox_key') ?>", "<?= setting('jenis_peta') ?>");
 
         // Tampilkan Posisi Pelapak
         marker = new L.Marker(posisi, {
