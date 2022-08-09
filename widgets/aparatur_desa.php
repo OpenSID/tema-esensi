@@ -8,10 +8,10 @@
   </div>
   <div class="box-body">
     <div class="owl-carousel">
-      <?php foreach ($aparatur_desa['daftar_perangkat'] as $data) : ?>
+      <?php foreach (pemerintah_desa() as $data) : ?>
         <div class="relative space-y-2">
           <div class="w-3/4 mx-auto">
-            <img src="<?= $data['foto'] ?>" alt="<?= $data['nama'] ?>" class="object-cover object-center bg-gray-300">
+            <img src="<?= AmbilFoto($data['foto'], 'besar', $data['id_sex'], true) ?>" alt="<?= $data['nama'] ?>" class="object-cover object-center bg-gray-300">
           </div>
           <?php if ($this->web_widget_model->get_setting('aparatur_desa', 'overlay') == true) : ?>
             <div class="space-y-1 text-sm text-center z-10">
