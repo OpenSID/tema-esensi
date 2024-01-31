@@ -1,4 +1,4 @@
-Catatan Rilis Tema Esensi v2401.1.0 :
+Catatan Rilis Tema Esensi v2402.0.0 :
 
 1. Penambahan jenis tampilan artikel (konten kiri + sidebar, konten kanan + sidebar dan layar penuh)
 2. Penambahan menu dengan beberapa submenu didalamnya.
