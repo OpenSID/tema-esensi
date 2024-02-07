@@ -38,7 +38,11 @@
 
               <?php foreach($menu['childrens'] as $childrens) : ?>
                 <?php if($childrens['childrens']) : ?>
-                <li class="inline-block relative"><a href="<?= $childrens['link'] ?>" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white"><?= $childrens['nama'] ?></a></li>
+                <li class="inline-block relative"><a href="<?= $childrens['link'] ?>" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white"><?= $childrens['nama'] ?>
+                <?php if($has_dropdown) : ?>
+                  <i class="fas fa-chevron-left text-xs ml-1 inline-block transition duration-300" :class="{'transform rotate-180': dropdown}"></i>
+                <?php endif ?>
+              </a></li>
 
                   <?php foreach($childrens['childrens'] as $bmenu) : ?>
                     <?php $bhas_dropdown = count($bmenu['childrens']) > 0 ?>
