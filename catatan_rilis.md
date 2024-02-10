@@ -1,4 +1,4 @@
-Catatan Rilis Tema Esensi v2402.0.0 :
+Catatan Rilis Tema Esensi v2402.0.1 :
 
 ### FITUR
 
