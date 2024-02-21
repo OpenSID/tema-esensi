@@ -22,7 +22,7 @@
         <?php $has_dropdown = count($menu['submenu']) > 0 ?>
         <li class="block relative" <?php $has_dropdown and print('x-data="{dropdown: false}"') ?>>
 
-          <?php $menu_link = $has_dropdown ? '#!' : $menu['link'] ?>
+          <?php $menu_link = $has_dropdown ? '#!' : $menu['link_url'] ?>
 
           <a href="<?= $menu_link ?>"
             class="p-3 block hover:bg-secondary-100"
@@ -42,7 +42,7 @@
               @click="dropdown = !dropdown">
 
               <?php foreach($menu['submenu'] as $submenu) : ?>
-                <li @click="dropdown = false"><a href="<?= $submenu['link'] ?>" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white"><?= $submenu['nama'] ?></a></li>
+                <li @click="dropdown = false"><a href="<?= $submenu['link_url'] ?>" class="block py-3 pl-5 pr-4 hover:bg-primary-200 hover:text-white"><?= $submenu['nama'] ?></a></li>
               <?php endforeach ?>
               
             </ul>
