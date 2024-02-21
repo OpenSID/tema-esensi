@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <style>
-.w-full{width:max-content;}  
+.width-full{width:max-content;}  
 </style>
 <nav class="bg-primary-100 text-white hidden lg:block" role="navigation">
   <ul>
@@ -30,7 +30,7 @@
 
           <?php if($has_dropdown) : ?>
             <ul
-              class="absolute top-full w-full bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" 
+              class="absolute top-full width-full bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" 
               :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-[9999] scale-y-100': dropdown}"
               x-transition
               @mouseover="dropdown = true"
@@ -66,7 +66,7 @@
 
                       <?php if($bhas_dropdown) : ?>
                         <ul
-                          class="absolute top-full w-full bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" 
+                          class="absolute top-full width-full bg-white text-gray-700 shadow-lg invisible transform transition duration-200 origin-top" 
                           :class="{'opacity-0 invisible z-[-10] scale-y-50': !dropdown, 'opacity-100 visible z-[9999] scale-y-100': dropdown}"
                           x-transition
                           @mouseover="dropdown = true"
