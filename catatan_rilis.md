@@ -1,9 +1,11 @@
-Catatan Rilis v2411.0.0 :
-
-### FITUR : 
-1. Penambahan fungsi cetak dan unduh pada halaman statistik dan bantuan.
-2. Penambahan fungsi cetak dan unduh pada halaman statistik kesehatan > stunting.
-3. Penambahan fungsi menu tipe embed.
+Catatan Rilis v2409.0.0 :
 
 ### BUG : 
-1. Perbaikan pengurutan data pada informasi publik.
+1. Perbaikan menu versi mobile.
+2. Perbaikan sebutan dusun pada halaman DPT.
+3. Perbaikan widget statistik pengunjung.
+
+### TEKNIS :
+1. Penyesuaian halaman statis.
+2. Penyesuaian halaman 404.
+3. Penyesuaian judul halaman statistik.
