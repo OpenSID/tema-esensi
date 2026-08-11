@@ -23,6 +23,9 @@
 @push('scripts')
     <script type="text/javascript">
         $(document).ready(function() {
+            var setting = @json(['sebutan_desa' => setting('sebutan_desa')]);
+            var config = @json(['nama_desa' => identitas('nama_desa')]);
+
             function loadHighcharts(strukturPemerintah, strukturSotk) {
                 Highcharts.chart('container-sotk', {
                     chart: {
