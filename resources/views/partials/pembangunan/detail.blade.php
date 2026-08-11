@@ -19,8 +19,29 @@
 @push('scripts')
     <script type="text/javascript">
         $(document).ready(function() {
+            var setting = @json([
+                'default_zoom'          => setting('default_zoom'),
+                'icon_pembangunan_peta' => setting('icon_pembangunan_peta'),
+                'max_zoom_peta'         => setting('max_zoom_peta'),
+                'min_zoom_peta'         => setting('min_zoom_peta'),
+                'mapbox_key'            => setting('mapbox_key'),
+                'jenis_peta'            => setting('jenis_peta'),
+            ]);
+            var config = @json(['lat' => identitas('lat'), 'lng' => identitas('lng')]);
             var slug = '{{ $slug }}';
             var notFound = '{{ asset('images/404-image-not-found.jpg') }}';
+
+            function escapeHtml(unsafe) {
+                if (typeof unsafe !== 'string') {
+                    return unsafe;
+                }
+                return unsafe
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
 
             function loadPembangunan() {
                 const apiPembangunan = '{{ route('api.pembangunan') }}';
@@ -81,10 +102,11 @@
 
                     if (dokumentasi && dokumentasi.length > 0) {
                         dokumentasi.forEach((dok) => {
+                            const escapedPersentase = escapeHtml(dok.persentase);
                             pembangunanHTML += `
                             <div class="w-full text-center py-2">
-                                <img width="auto" class="h-auto w-full" src="${dok.gambar ?? notFound}" alt="Foto Pembangunan ${dok.persentase}%">
-                                <b>Foto Pembangunan ${dok.persentase}</b>
+                                <img width="auto" class="h-auto w-full" src="${dok.gambar ?? notFound}" alt="Foto Pembangunan ${escapedPersentase}%">
+                                <b>Foto Pembangunan ${escapedPersentase}</b>
                             </div>
                         `;
                         });
