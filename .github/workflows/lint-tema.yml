@@ -1,0 +1,77 @@
+name: Lint Tema
+
+# Template: salin ke `.github/workflows/lint-tema.yml` di repo tema kanonik
+# (OpenSID/tema-*). Padanan RINGAN dari `pipeline/templates/ci-modul.yml` —
+# tema adalah Blade+CSS+JS presentasional tanpa logika PHP, jadi tak ada
+# matriks kompatibilitas core / uji PHPUnit; yang digerbang hanya:
+#   1. `theme.json` well-formed + kunci wajib + `require.opensid-core` valid
+#   2. `composer.json` well-formed + punya `version` + `name` = `themes/<slug>`
+#   3. `theme.json` `version` == `composer.json` `version` (Isu C — tiga sumber versi)
+#   4. `resources/views/template.blade.php` ada (syarat wajib `theme_scan()`)
+#
+# Tak butuh secret, tak butuh setup-php: `jq` sudah terpasang di runner.
+# Berjalan < 15 detik. Tujuannya menangkap `theme.json` rusak SEBELUM rilis
+# dipotong (`release.yml` fire saat tag `v*` — tak ada validasi di sana).
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validasi theme.json
+        run: |
+          set -euo pipefail
+          test -f theme.json || { echo "::error file=theme.json::theme.json tidak ada"; exit 1; }
+          jq empty theme.json || { echo "::error file=theme.json::bukan JSON valid"; exit 1; }
+
+          for k in name description thumbnail price version package; do
+            ok=$(jq -r --arg k "$k" 'has($k) and (.[$k] != null) and (.[$k] != "")' theme.json)
+            [ "$ok" = "true" ] || { echo "::error file=theme.json::kunci '$k' hilang/kosong"; exit 1; }
+          done
+
+          c=$(jq -r '.require["opensid-core"] // empty' theme.json)
+          [ -n "$c" ] || { echo "::error file=theme.json::require.opensid-core tidak ada (premium#7026/#7031)"; exit 1; }
+          echo "$c" | grep -Eq '^(>=|<=|>|<|\^|~|=)?\s*[0-9]+(\.[0-9]+){0,2}([[:space:]].+)?$' \
+            || { echo "::error file=theme.json::require.opensid-core '$c' bukan constraint versi yang dikenali"; exit 1; }
+
+          pkg=$(jq -r '.package' theme.json)
+          echo "$pkg" | grep -Eq '^tema-[a-z0-9-]+$' \
+            || echo "::warning file=theme.json::package '$pkg' tidak berpola 'tema-<slug>'"
+
+      - name: Validasi composer.json
+        run: |
+          set -euo pipefail
+          test -f composer.json || { echo "::error file=composer.json::tidak ada (syarat wajib theme_scan())"; exit 1; }
+          jq empty composer.json || { echo "::error file=composer.json::bukan JSON valid"; exit 1; }
+
+          ver=$(jq -r '.version // empty' composer.json)
+          [ -n "$ver" ] || { echo "::error file=composer.json::field 'version' tidak ada — theme_scan() fallback ke '1.0.0' untuk kolom theme.versi"; exit 1; }
+
+          name=$(jq -r '.name // empty' composer.json)
+          echo "$name" | grep -Eq '^themes/[a-z0-9._-]+$' \
+            || echo "::warning file=composer.json::name '$name' bukan 'themes/<slug>' — slug theme_scan() bisa tak cocok alias manifes Layanan (Isu D)"
+
+          tj=$(jq -r '.version' theme.json | sed 's/^[vV]//')
+          cj=$(printf '%s' "$ver" | sed 's/^[vV]//')
+          [ "$tj" = "$cj" ] || { echo "::error::versi tak selaras — theme.json='$tj' composer.json='$cj' (Isu C)"; exit 1; }
+
+      - name: Cek template Blade wajib
+        run: |
+          test -f resources/views/template.blade.php \
+            || { echo "::error file=resources/views/template.blade.php::tidak ada — theme_scan() akan menyaring tema ini diam-diam"; exit 1; }
+
+      - name: Ringkasan
+        run: |
+          echo "theme.json  : $(jq -c '{name,version,package,require}' theme.json)"
+          echo "composer    : $(jq -r '.name + \" @ \" + .version' composer.json)"
+          echo "OK — theme.json valid, versi selaras, template.blade.php ada."
