@@ -165,6 +165,7 @@
             background: var(--pengumuman-aksen);
             color: #fff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+            opacity: .85;
             transform: translateY(-50%);
             cursor: pointer;
         }
@@ -172,6 +173,7 @@
         #pengumuman-popup .pengumuman-geser:hover,
         #pengumuman-popup .pengumuman-geser:focus-visible {
             background: var(--pengumuman-aksen-gelap);
+            opacity: 1;
             outline: none;
         }
 
@@ -180,20 +182,19 @@
             height: 22px;
         }
 
+        /* Tombol berada di atas gambar; posisi vertikal diatur JS ke tengah gambar slide aktif. */
         #pengumuman-popup .pengumuman-geser-kiri {
-            left: -60px;
+            left: 12px;
         }
 
         #pengumuman-popup .pengumuman-geser-kanan {
-            right: -60px;
+            right: 12px;
         }
 
-        /* Layar sempit: tombol masuk ke tepi dalam modal supaya tidak keluar layar. */
         @media (max-width: 767px) {
             #pengumuman-popup .pengumuman-geser {
-                width: 38px;
-                height: 38px;
-                opacity: .9;
+                width: 36px;
+                height: 36px;
             }
 
             #pengumuman-popup .pengumuman-geser-kiri {
@@ -289,7 +290,23 @@
             }
 
             var slides = popup.querySelectorAll('[data-slide]');
+            var wadah = popup.querySelector('.pengumuman-wadah');
+            var tombolGeser = popup.querySelectorAll('.pengumuman-geser');
             var aktif = 0;
+
+            // Letakkan tombol geser di tengah gambar slide aktif; tanpa gambar, di tengah popup.
+            function aturPosisiTombol() {
+                var gambar = slides[aktif].querySelector('.pengumuman-gambar');
+                var atas = '50%';
+
+                if (gambar && gambar.offsetHeight > 0) {
+                    atas = (gambar.getBoundingClientRect().top - wadah.getBoundingClientRect().top + gambar.offsetHeight / 2) + 'px';
+                }
+
+                for (var i = 0; i < tombolGeser.length; i++) {
+                    tombolGeser[i].style.top = atas;
+                }
+            }
 
             function tampilkan(index) {
                 aktif = (index + slides.length) % slides.length;
@@ -297,6 +314,7 @@
                     slides[i].hidden = i !== aktif;
                 }
                 popup.setAttribute('aria-labelledby', 'pengumuman-judul-' + aktif);
+                aturPosisiTombol();
             }
 
             function tekanTombol(event) {
@@ -329,10 +347,18 @@
                 }
             });
 
+            var semuaGambar = popup.querySelectorAll('.pengumuman-gambar');
+            for (var g = 0; g < semuaGambar.length; g++) {
+                semuaGambar[g].addEventListener('load', aturPosisiTombol);
+            }
+            window.addEventListener('resize', aturPosisiTombol);
+            popup.querySelector('.pengumuman-kotak').addEventListener('scroll', aturPosisiTombol);
+
             function buka() {
                 document.addEventListener('keydown', tekanTombol);
                 tampilkan(0);
                 popup.hidden = false;
+                aturPosisiTombol();
                 document.body.classList.add('pengumuman-terbuka');
                 popup.querySelector('.pengumuman-tutup').focus();
             }
