@@ -48,7 +48,6 @@
         #pengumuman-popup .pengumuman-kotak {
             position: relative;
             width: 100%;
-            max-width: 640px;
             max-height: calc(100vh - 32px);
             overflow-y: auto;
             background: var(--pengumuman-kartu);
@@ -145,30 +144,65 @@
             color: #fff;
         }
 
-        #pengumuman-popup .pengumuman-navigasi {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 8px;
-            padding: 10px 20px;
-            border-top: 1px solid var(--pengumuman-garis);
-            font-size: 14px;
+        #pengumuman-popup .pengumuman-wadah {
+            position: relative;
+            width: 100%;
+            max-width: 640px;
         }
 
-        #pengumuman-popup .pengumuman-navigasi button {
-            padding: 6px 12px;
-            border: 1px solid var(--pengumuman-aksen);
-            border-radius: var(--pengumuman-radius);
-            background: transparent;
-            color: var(--pengumuman-aksen);
-            font-size: 14px;
+        #pengumuman-popup .pengumuman-geser {
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: var(--pengumuman-aksen);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+            transform: translateY(-50%);
             cursor: pointer;
         }
 
-        #pengumuman-popup .pengumuman-navigasi button:hover,
-        #pengumuman-popup .pengumuman-navigasi button:focus-visible {
-            background: var(--pengumuman-aksen);
-            color: #fff;
+        #pengumuman-popup .pengumuman-geser:hover,
+        #pengumuman-popup .pengumuman-geser:focus-visible {
+            background: var(--pengumuman-aksen-gelap);
+            outline: none;
+        }
+
+        #pengumuman-popup .pengumuman-geser svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        #pengumuman-popup .pengumuman-geser-kiri {
+            left: -60px;
+        }
+
+        #pengumuman-popup .pengumuman-geser-kanan {
+            right: -60px;
+        }
+
+        /* Layar sempit: tombol masuk ke tepi dalam modal supaya tidak keluar layar. */
+        @media (max-width: 767px) {
+            #pengumuman-popup .pengumuman-geser {
+                width: 38px;
+                height: 38px;
+                opacity: .9;
+            }
+
+            #pengumuman-popup .pengumuman-geser-kiri {
+                left: 8px;
+            }
+
+            #pengumuman-popup .pengumuman-geser-kanan {
+                right: 8px;
+            }
         }
 
         body.pengumuman-terbuka {
@@ -184,36 +218,41 @@
 
     <div id="pengumuman-popup" data-kunci="{{ $pengumumanPopup['kunci'] }}" role="dialog" aria-modal="true" aria-labelledby="pengumuman-judul-0" hidden>
         <div class="pengumuman-latar" data-tutup></div>
-        <div class="pengumuman-kotak">
-            <button type="button" class="pengumuman-tutup" data-tutup aria-label="Tutup pengumuman" title="Tutup">&times;</button>
-            @foreach ($pengumumanPopup['data'] as $item)
-                <div class="pengumuman-slide {{ $item['gambar'] ? 'berisi-gambar' : '' }}" data-slide @if (!$loop->first) hidden @endif>
-                    @if ($item['gambar'])
-                        @if ($item['tautan'])
-                            <a href="{{ $item['tautan'] }}" target="_blank" rel="noopener noreferrer">
-                                <img class="pengumuman-gambar" src="{{ $item['gambar'] }}" alt="{{ $item['judul'] }}">
-                            </a>
-                        @else
-                            <img class="pengumuman-gambar" src="{{ $item['gambar'] }}" alt="{{ $item['judul'] }}">
-                        @endif
-                    @endif
-                    <div class="pengumuman-isi">
-                        <h2 class="pengumuman-judul" id="pengumuman-judul-{{ $loop->index }}">{{ $item['judul'] }}</h2>
-                        @if ($item['keterangan'])
-                            <p class="pengumuman-keterangan">{{ $item['keterangan'] }}</p>
-                        @endif
-                        @if ($item['tautan'] && $item['judul_tautan'])
-                            <a class="pengumuman-tombol" href="{{ $item['tautan'] }}" target="_blank" rel="noopener noreferrer">{{ $item['judul_tautan'] }}</a>
-                        @endif
-                    </div>
-                </div>
-            @endforeach
+        <div class="pengumuman-wadah">
             @if (count($pengumumanPopup['data']) > 1)
-                <div class="pengumuman-navigasi">
-                    <button type="button" data-sebelumnya aria-label="Pengumuman sebelumnya">&lsaquo; Sebelumnya</button>
-                    <span data-posisi aria-live="polite">1 / {{ count($pengumumanPopup['data']) }}</span>
-                    <button type="button" data-berikutnya aria-label="Pengumuman berikutnya">Berikutnya &rsaquo;</button>
-                </div>
+                <button type="button" class="pengumuman-geser pengumuman-geser-kiri" data-sebelumnya aria-label="Pengumuman sebelumnya" title="Sebelumnya">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+            @endif
+            <div class="pengumuman-kotak">
+                <button type="button" class="pengumuman-tutup" data-tutup aria-label="Tutup pengumuman" title="Tutup">&times;</button>
+                @foreach ($pengumumanPopup['data'] as $item)
+                    <div class="pengumuman-slide {{ $item['gambar'] ? 'berisi-gambar' : '' }}" data-slide @if (!$loop->first) hidden @endif>
+                        @if ($item['gambar'])
+                            @if ($item['tautan'])
+                                <a href="{{ $item['tautan'] }}" target="_blank" rel="noopener noreferrer">
+                                    <img class="pengumuman-gambar" src="{{ $item['gambar'] }}" alt="{{ $item['judul'] }}">
+                                </a>
+                            @else
+                                <img class="pengumuman-gambar" src="{{ $item['gambar'] }}" alt="{{ $item['judul'] }}">
+                            @endif
+                        @endif
+                        <div class="pengumuman-isi">
+                            <h2 class="pengumuman-judul" id="pengumuman-judul-{{ $loop->index }}">{{ $item['judul'] }}</h2>
+                            @if ($item['keterangan'])
+                                <p class="pengumuman-keterangan">{{ $item['keterangan'] }}</p>
+                            @endif
+                            @if ($item['tautan'] && $item['judul_tautan'])
+                                <a class="pengumuman-tombol" href="{{ $item['tautan'] }}" target="_blank" rel="noopener noreferrer">{{ $item['judul_tautan'] }}</a>
+                            @endif
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @if (count($pengumumanPopup['data']) > 1)
+                <button type="button" class="pengumuman-geser pengumuman-geser-kanan" data-berikutnya aria-label="Pengumuman berikutnya" title="Berikutnya">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
             @endif
         </div>
     </div>
@@ -250,7 +289,6 @@
             }
 
             var slides = popup.querySelectorAll('[data-slide]');
-            var posisi = popup.querySelector('[data-posisi]');
             var aktif = 0;
 
             function tampilkan(index) {
@@ -259,9 +297,6 @@
                     slides[i].hidden = i !== aktif;
                 }
                 popup.setAttribute('aria-labelledby', 'pengumuman-judul-' + aktif);
-                if (posisi) {
-                    posisi.textContent = (aktif + 1) + ' / ' + slides.length;
-                }
             }
 
             function tekanTombol(event) {
